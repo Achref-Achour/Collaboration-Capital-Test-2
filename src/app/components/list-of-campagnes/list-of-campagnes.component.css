@@ -1,0 +1,41 @@
+
+.request-title{
+    color: #b3bfcf;
+}
+.text{
+    margin: auto 0 !important;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.right{
+    float: right;
+}
+.space-between{
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-element{
+    background-color: #f1f3f6;
+    width: 200px;
+    border: solid 1px #b3bfcf;
+    border-radius: 5px;
+}
+
+.filter-button{
+    background-color: #11305e;
+    color: white;
+    border: solid 1px #11305e;
+    width: 100px;
+}
+
+.campagnes-item{
+    background-color: #f2f9ff;
+    height: 100px;
+    DISPLAY: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px #b3bfcf;
+    border-radius: 20px;
+    margin: 20px 0px;
+}

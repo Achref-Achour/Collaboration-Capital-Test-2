@@ -1,0 +1,42 @@
+<form #myForm="ngForm" class="form">
+    <div>
+        <label id="brand">brand *</label>
+        <select class="form-element" [(ngModel)]="campagne.brand.brandId" name="brand">
+            <option *ngFor="let brand of brands" [value]="brand.brandId">{{ brand.name }}</option>
+        </select>
+    </div>
+
+    <div>
+        <label id="name">Campaign name *</label>
+        <input class="form-element" name="name" [(ngModel)]="campagne.campaignName" required>    
+    </div>
+    
+    <div class="row">
+        <label>Media *</label>
+        <div class="col-md-6 checkbox-column">
+            <label *ngFor="let option of mediaOptions.slice(0, mediaOptions.length/2)">
+              <input type="checkbox" 
+                     [checked]="isChecked(option)"
+                     (change)="onCheckboxChange($event, option)"
+                     >
+              {{option.name}}
+            </label>
+        </div>
+        <div class="col-md-6 checkbox-column">
+            <label *ngFor="let option of mediaOptions.slice(mediaOptions.length/2)">
+              <input type="checkbox" 
+                     [checked]="isChecked(option)"
+                     (change)="onCheckboxChange($event, option)"
+                     >
+              {{option.name}}
+            </label>
+        </div>
+    </div>
+    <div>
+        <label>Deadline fir decision *</label>
+        <input class="form-element" type="date" [value]="this.campagne.decisionDeadline" [(ngModel)]="this.campagne.decisionDeadline" required name="decisionDeadline">
+        
+    </div>
+   
+  </form>
+  

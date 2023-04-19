@@ -1,0 +1,33 @@
+<h4 class="request-title">All requests</h4>
+<div class="row">
+  <div class="col-md-6 space-between">
+    <p class="text">filters</p>
+    <input class="form-element" type="search" [(ngModel)]="searchInputValue" (input)="filterCampaigns()">
+    <select class="form-element" [(ngModel)]="brandFilterValue" (change)="filterCampaigns()">
+      <option value="">All brands</option>
+      <option *ngFor="let brand of brands" [value]="brand.brandId">{{ brand.name }}</option>
+    </select>
+  </div>
+  <div class="col-md-6">
+    <button class="btn btn-primary filter-button right">Filter</button>
+  </div>
+</div>
+<div class="row">
+  <div>
+    <div class="row" >
+      <div class="col-md-2">Statut</div>
+      <div class="col-md-3">Name</div>
+      <div class="col-md-2">Type	</div>
+      <div class="col-md-2">Brand</div>
+      <div class="col-md-2">Submission</div>
+      <div class="col-md-1"></div>
+    </div>
+    <div class="campagnes-item" *ngIf="filteredCampaigns.length == 0; else showCampagneList">
+        No Data
+    </div>
+    <ng-template #showCampagneList>
+        <app-one-compagne  *ngFor="let campagne of filteredCampaigns" [campagne]="campagne"></app-one-compagne>
+    </ng-template>
+  </div>
+</div>
+

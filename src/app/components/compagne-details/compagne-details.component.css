@@ -1,0 +1,22 @@
+.form-element{
+    background-color: #f1f3f6;
+    width: 100%;
+    border: solid 1px #b3bfcf;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.form{
+    border: solid 1px #b3bfcf;
+    border-radius: 5px;
+    padding: 2%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 800px;
+}
+
+.checkbox-column{
+    display: flex;
+    flex-direction: column;
+}

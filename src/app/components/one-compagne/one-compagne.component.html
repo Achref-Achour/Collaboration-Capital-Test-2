@@ -1,0 +1,31 @@
+<div class="row campagnes-item pointer" [routerLink]="['/compagne', campagne.requestId]">
+    <div class="col-md-1">
+
+        <div class="validated-icone" *ngIf="campagne.requestStatus.requestStatusId === 6; else other">
+            <i class="bi bi-check-circle"></i>
+            {{campagne.requestStatus.value}}
+          </div>
+          <ng-template #other>
+            <div class="rejected-icone" *ngIf="campagne.requestStatus.requestStatusId === 2">
+                <i class="bi bi-check-circle"></i>
+                {{campagne.requestStatus.value}}
+              </div>
+              <div class="pending-icone" *ngIf="campagne.requestStatus.requestStatusId != 2">
+                <i class="bi bi-hourglass"></i>
+                {{campagne.requestStatus.value}}
+              </div>
+          </ng-template>
+          
+    </div>
+    <div class="col-md-4 border-left">{{campagne.campaignName}}</div>
+    <div class="col-md-2">
+        <span *ngIf="campagne.advice; else request" class="badge badge-danger" >Advice</span>
+        <ng-template #request>
+            <span class="badge badge-secondary">Request</span> 
+
+        </ng-template>
+    </div>
+    <div class="col-md-2"><h4>{{campagne.brand.name}}</h4></div>
+    <div class="col-md-2">{{transform(campagne.createdDate)}}</div>
+    <div class="col-md-1">></div>
+</div>
